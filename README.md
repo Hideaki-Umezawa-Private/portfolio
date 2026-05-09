@@ -3,7 +3,7 @@
 **Web Engineer**
 Web・IT相談 / 業務改善・自動化サポート
 
-🌐 Portfolio: [https://umezawa-hideaki.github.io/portfolio](https://umezawa-hideaki.github.io/portfolio)
+🌐 Portfolio: [https://hideaki-umezawa-private.github.io/portfolio/](https://hideaki-umezawa-private.github.io/portfolio/)
 📩 Mail: [hideaki.umezawa.works@gmail.com](mailto:hideaki.umezawa.works@gmail.com)
 
 ---
