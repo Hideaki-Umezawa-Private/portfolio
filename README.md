@@ -1,59 +1,58 @@
-Portfolio
+🌌 Portfolio
 
-Webエンジニア 梅澤英昭 のポートフォリオサイトです。
+<div align="center">
 
-URL
+Hideaki Umezawa
 
-* Portfolio
-    * https://umezawa-hideaki.github.io/portfolio
-* GitHub
-    * https://github.com/umezawa-hideaki/portfolio
+Web Engineer
 
-⸻
+Web・IT相談 / 業務改善・自動化サポート
 
-About
+Portfolio￼ ・ GitHub￼
 
-Web開発・業務改善・自動化サポートを中心に活動しています。
-
-対応内容
-
-* Webサイト制作
-* Webアプリ開発
-* React / TypeScript 開発
-* AWS を用いたインフラ構築
-* 業務改善・自動化サポート
-* Web・IT相談
+</div>
 
 ⸻
 
-Tech Stack
+✨ About
+
+Web開発を中心に、
+業務改善・自動化・Web/ITサポートを行っています。
+
+「作る」だけではなく、
+
+* 業務をラクにする
+* 情報を整理する
+* 運用しやすくする
+* 相談しやすい
+
+を大切にしています。
+
+⸻
+
+🛠 Tech Stack
+
+<div align="center">
 
 Frontend
 
-* React
-* TypeScript
-* Vite
-* CSS
-
 Infrastructure / Tools
 
-* GitHub Pages
-* GitHub Actions
-* AWS
-* Git
+</div>
 
 ⸻
 
-Features
+🚀 Features
 
-* レスポンシブ対応
-* GitHub Pages 自動デプロイ
-* モダンなUIデザイン
-* ポートフォリオ掲載
+* Responsive Design
+* GitHub Pages Deploy
+* Modern UI
+* Portfolio Showcase
+* Automation Support
 
 ⸻
 
-Development
+📦 Development
 
 Install
 
@@ -69,19 +68,24 @@ npm run build
 
 ⸻
 
-Deploy
+🌐 Links
 
-GitHub Actions を利用して GitHub Pages へ自動デプロイしています。
+* Portfolio
+    * https://umezawa-hideaki.github.io/portfolio
+* GitHub
+    * https://github.com/umezawa-hideaki
 
 ⸻
 
-Contact
+📩 Contact
 
 * Mail
     * hideaki.umezawa.works@gmail.com
 
 ⸻
 
-Author
+<div align="center">
 
-Hideaki Umezawa
+Thank you for visiting ✨
+
+</div>
