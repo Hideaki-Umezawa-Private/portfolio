@@ -1,91 +1,60 @@
-🌌 Portfolio
+# Hideaki Umezawa Portfolio
 
-<div align="center">
-
-Hideaki Umezawa
-
-Web Engineer
-
+**Web Engineer**
 Web・IT相談 / 業務改善・自動化サポート
 
-Portfolio￼ ・ GitHub￼
+🌐 Portfolio: [https://umezawa-hideaki.github.io/portfolio](https://umezawa-hideaki.github.io/portfolio)
+📩 Mail: [hideaki.umezawa.works@gmail.com](mailto:hideaki.umezawa.works@gmail.com)
 
-</div>
+---
 
-⸻
+## About
 
-✨ About
+Web開発を中心に、業務改善・自動化・Web/ITサポートを行っています。
 
-Web開発を中心に、
-業務改善・自動化・Web/ITサポートを行っています。
+単に「作る」だけではなく、相談しやすく、運用しやすいWebサイト・Webアプリづくりを大切にしています。
 
-「作る」だけではなく、
+---
 
-* 業務をラクにする
-* 情報を整理する
-* 運用しやすくする
-* 相談しやすい
+## Service
 
-を大切にしています。
+* Webサイト制作
+* Webアプリ開発
+* Web・IT相談
+* 業務改善サポート
+* 自動化サポート
 
-⸻
+---
 
-🛠 Tech Stack
+## Development
 
-<div align="center">
+### Install
 
-Frontend
-
-Infrastructure / Tools
-
-</div>
-
-⸻
-
-🚀 Features
-
-* Responsive Design
-* GitHub Pages Deploy
-* Modern UI
-* Portfolio Showcase
-* Automation Support
-
-⸻
-
-📦 Development
-
-Install
-
+```bash
 npm install
+```
 
-Start
+### Start
 
+```bash
 npm run dev
+```
 
-Build
+### Build
 
+```bash
 npm run build
+```
 
-⸻
+---
 
-🌐 Links
+## Links
 
-* Portfolio
-    * https://umezawa-hideaki.github.io/portfolio
-* GitHub
-    * https://github.com/umezawa-hideaki
+* Portfolio: [https://umezawa-hideaki.github.io/portfolio](https://umezawa-hideaki.github.io/portfolio)
+* GitHub: [https://github.com/umezawa-hideaki](https://github.com/umezawa-hideaki)
 
-⸻
+---
 
-📩 Contact
+## Author
 
-* Mail
-    * hideaki.umezawa.works@gmail.com
-
-⸻
-
-<div align="center">
-
-Thank you for visiting ✨
-
-</div>
+Hideaki Umezawa / 梅澤 英昭
