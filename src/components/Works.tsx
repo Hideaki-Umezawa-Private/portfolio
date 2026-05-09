@@ -14,7 +14,7 @@ export function Works() {
             実験システム
           </h2>
           <div className="project-achievement">
-            <strong>約1,200名</strong>
+            <strong>約1,300名</strong>
             <span>の研究参加者が利用</span>
           </div>
           <p>
