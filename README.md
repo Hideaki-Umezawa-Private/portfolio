@@ -4,7 +4,6 @@
 Web・IT相談 / 業務改善・自動化サポート
 
 🌐 Portfolio: [https://hideaki-umezawa-private.github.io/portfolio/](https://hideaki-umezawa-private.github.io/portfolio/)
-📩 Mail: [hideaki.umezawa.works@gmail.com](mailto:hideaki.umezawa.works@gmail.com)
 
 ---
 
@@ -46,15 +45,4 @@ npm run dev
 npm run build
 ```
 
----
 
-## Links
-
-* Portfolio: [https://umezawa-hideaki.github.io/portfolio](https://umezawa-hideaki.github.io/portfolio)
-* GitHub: [https://github.com/umezawa-hideaki](https://github.com/umezawa-hideaki)
-
----
-
-## Author
-
-Hideaki Umezawa / 梅澤 英昭
