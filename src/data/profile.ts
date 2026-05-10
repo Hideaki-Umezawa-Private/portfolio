@@ -1,4 +1,4 @@
-export const emailAddress = 'umehide.dev@gmail.com'
+export const emailAddress = 'hideaki.umezawa.works@gmail.com'
 export const githubUrl = 'https://github.com/umehide-dev'
 export const xUrl = 'https://x.com/umehide_dev'
 
