@@ -1054,17 +1054,22 @@ main::after {
     width: min(100% - 32px, 1120px);
   }
 
+  .desktop-break {
+    display: none;
+  }
+
   h1 {
     font-size: clamp(2.9rem, 17vw, 4.2rem);
   }
 
   h2 {
     font-size: clamp(1.52rem, 8vw, 2.1rem);
+    text-wrap: pretty;
   }
 
   .hero {
-    gap: 34px;
-    padding: 118px 0 64px;
+    gap: 28px;
+    padding: 112px 0 56px;
   }
 
   .hero-underline {
@@ -1074,10 +1079,20 @@ main::after {
 
   .hero__note {
     font-size: 0.94rem;
+    line-height: 1.9;
+    text-wrap: pretty;
   }
 
   .hero__actions .button {
     width: 100%;
+  }
+
+  .hero__visual {
+    display: grid;
+    gap: 12px;
+    min-height: auto;
+    overflow: hidden;
+    border-radius: 20px;
   }
 
   .floating-card {
@@ -1086,19 +1101,64 @@ main::after {
     right: auto;
     bottom: auto;
     left: auto;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
     width: 100%;
-    margin-bottom: 14px;
+    min-height: 116px;
+    margin-bottom: 0;
+    border-radius: 16px;
+    padding: 18px;
+    background: rgb(255 255 255 / 0.84);
+    box-shadow:
+      0 16px 38px rgb(45 72 130 / 0.1),
+      inset 0 1px 0 rgb(255 255 255 / 0.94);
     transform: none;
-    animation: mobileCardReveal 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: none;
+  }
+
+  .hero__visual.is-visible .floating-card {
+    animation: mobileCardReveal 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hero__visual.is-visible .floating-card--middle {
+    animation-delay: 120ms;
+  }
+
+  .hero__visual.is-visible .floating-card--bottom {
+    animation-delay: 240ms;
+  }
+
+  .floating-card::before {
+    animation-play-state: paused;
+  }
+
+  .hero__visual.is-visible .floating-card::before {
+    animation-play-state: running;
+  }
+
+  .floating-card span {
+    width: 40px;
+    height: 40px;
+    animation-play-state: paused;
+  }
+
+  .hero__visual.is-visible .floating-card span {
+    animation-play-state: running;
+  }
+
+  .floating-card strong {
+    line-height: 1.45;
+  }
+
+  .floating-card p {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    text-wrap: pretty;
   }
 
   .soft-orbit,
   .glow-ball {
     display: none;
-  }
-
-  .hero__visual {
-    min-height: auto;
   }
 
   .about-grid,
@@ -1107,12 +1167,26 @@ main::after {
     border-radius: 20px;
   }
 
+  .about-grid {
+    gap: 22px;
+    padding: 24px 20px;
+  }
+
   .about-main {
     gap: 22px;
   }
 
   .about-photo {
     max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .about-copy p,
+  .project-copy p,
+  .service-card p,
+  .contact p {
+    line-height: 1.95;
+    text-wrap: pretty;
   }
 
   .about-name {
@@ -1124,6 +1198,30 @@ main::after {
 
   .project-device-media {
     min-height: clamp(220px, 72vw, 330px);
+  }
+
+  .work-card {
+    gap: 0;
+    padding: 24px 20px;
+  }
+
+  .project-label {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .project-achievement {
+    border-radius: 16px;
+    white-space: normal;
+  }
+
+  .project-copy ul {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .project-copy li {
+    line-height: 1.7;
   }
 
   .macbook-shot {
@@ -1140,10 +1238,35 @@ main::after {
 
   .service-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .service-card {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 4px 14px;
+    align-items: start;
+    border-radius: 16px;
+    padding: 18px;
+  }
+
+  .service-card span {
+    grid-row: span 3;
+  }
+
+  .service-card h3 {
+    margin-bottom: 2px;
+    line-height: 1.45;
+  }
+
+  .service-link {
+    margin-top: 4px;
   }
 
   .contact {
     grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px 20px;
   }
 
   .contact-actions .button {

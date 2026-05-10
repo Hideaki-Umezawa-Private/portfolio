@@ -1,6 +1,37 @@
+import { useEffect, useRef, useState } from 'react'
 import { mailToUrl } from '../data/profile'
 
 export function Hero() {
+  const visualRef = useRef<HTMLDivElement>(null)
+  const [isVisualVisible, setIsVisualVisible] = useState(
+    () => typeof window !== 'undefined' && !('IntersectionObserver' in window),
+  )
+
+  useEffect(() => {
+    const visual = visualRef.current
+
+    if (!visual || isVisualVisible) {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisualVisible(true)
+          observer.disconnect()
+        }
+      },
+      {
+        rootMargin: '0px 0px -12% 0px',
+        threshold: 0.18,
+      },
+    )
+
+    observer.observe(visual)
+
+    return () => observer.disconnect()
+  }, [isVisualVisible])
+
   return (
     <section className="hero section-shell" id="top" aria-labelledby="hero-title">
       <div className="hero__content">
@@ -23,7 +54,7 @@ export function Hero() {
         </svg>
         <p className="hero__note">
           ホームページ制作から業務を支えるWebシステムまで、
-          <br />
+          <br className="desktop-break" />
           相談しながら形にし、公開後の運用までサポートします。
         </p>
         <div className="hero__actions" aria-label="Primary links">
@@ -33,7 +64,11 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero__visual" aria-hidden="true">
+      <div
+        className={`hero__visual${isVisualVisible ? ' is-visible' : ''}`}
+        ref={visualRef}
+        aria-hidden="true"
+      >
         <div className="soft-orbit soft-orbit--one" />
         <div className="soft-orbit soft-orbit--two" />
         <div className="glow-ball" />

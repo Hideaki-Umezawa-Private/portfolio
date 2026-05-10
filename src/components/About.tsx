@@ -15,14 +15,14 @@ export function About() {
           <div className="about-copy">
           <p>
             プログラミングで画面や仕組みが動き出す瞬間に、まるで魔法のような面白さを感じたことが、
-            <br />
+            <br className="desktop-break" />
             Web開発に惹かれたきっかけです。
-            <br />
+            <br className="desktop-break" />
             現在は、ホームページ制作やWebシステム開発、業務改善のサポートを行っています。            
             <br />
             <br />
             お客様に喜んでいただけることを励みにしながら、良い点も改善点も率直に受け止め、
-            <br />
+            <br className="desktop-break" />
             一緒により良い形をつくることを大切にしています。
             <br />
             <br />

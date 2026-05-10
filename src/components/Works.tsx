@@ -19,7 +19,7 @@ export function Works() {
           </div>
           <p>
             大学の研究室で使用されている、英語リスニング研究のための
-            <br />
+            <br className="desktop-break" />
             Webアプリケーションを開発しました。
           </p>
           <ul>

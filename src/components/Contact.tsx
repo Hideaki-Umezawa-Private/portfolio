@@ -8,7 +8,7 @@ export function Contact() {
         <h2>まずはお気軽にご相談ください</h2>
         <p>
           「何から相談すればいいかわからない」という段階でも大丈夫です。
-          <br />
+          <br className="desktop-break" />
           一緒に課題を整理し、最適な方法をご提案します。
         </p>
       </div>
