@@ -656,6 +656,32 @@ h3 {
   }
 }
 
+@keyframes portraitReveal {
+  0% {
+    opacity: 0;
+    filter: blur(12px) saturate(0.82);
+    transform: translate3d(-22px, 26px, 0) rotate(-9deg) scale(0.92);
+    box-shadow: 0 14px 34px rgb(30 57 110 / 0.1);
+  }
+  42% {
+    opacity: 1;
+    filter: blur(1px) saturate(1.08);
+    transform: translate3d(10px, -12px, 0) rotate(4deg) scale(1.035);
+    box-shadow: 0 34px 70px rgb(49 92 255 / 0.18);
+  }
+  72% {
+    opacity: 1;
+    filter: blur(0) saturate(1.02);
+    transform: translate3d(-4px, 5px, 0) rotate(-2deg) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) saturate(1);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    box-shadow: 0 24px 48px rgb(30 57 110 / 0.16);
+  }
+}
+
 .content-section {
   padding: 54px 0;
 }
@@ -709,6 +735,14 @@ h3 {
   object-fit: cover;
   object-position: 58% 42%;
   box-shadow: 0 24px 48px rgb(30 57 110 / 0.16);
+  opacity: 0;
+  transform: translate3d(-18px, 18px, 0) rotate(-7deg) scale(0.94);
+  transform-origin: 48% 58%;
+  will-change: transform, opacity, filter;
+}
+
+.about-photo.is-visible {
+  animation: portraitReveal 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .about-copy p,
@@ -1329,6 +1363,7 @@ main::after {
   }
 
   .floating-card,
+  .about-photo,
   .glow-ball,
   .soft-orbit {
     opacity: 1;
@@ -1340,7 +1375,8 @@ main::after {
   }
 
   .floating-card--middle,
-  .floating-card--bottom {
+  .floating-card--bottom,
+  .about-photo {
     transform: none;
   }
 

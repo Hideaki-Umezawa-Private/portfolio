@@ -1,7 +1,38 @@
+import { useEffect, useRef, useState } from 'react'
 import profilePhoto from '../assets/profile.jpg'
 import { Section } from './Section'
 
 export function About() {
+  const photoRef = useRef<HTMLImageElement>(null)
+  const [isPhotoVisible, setIsPhotoVisible] = useState(
+    () => typeof window !== 'undefined' && !('IntersectionObserver' in window),
+  )
+
+  useEffect(() => {
+    const photo = photoRef.current
+
+    if (!photo || isPhotoVisible) {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsPhotoVisible(true)
+          observer.disconnect()
+        }
+      },
+      {
+        rootMargin: '0px 0px -14% 0px',
+        threshold: 0.3,
+      },
+    )
+
+    observer.observe(photo)
+
+    return () => observer.disconnect()
+  }, [isPhotoVisible])
+
   return (
     <Section eyebrow="About Me" id="about">
       <div className="about-grid">
@@ -10,7 +41,12 @@ export function About() {
         </h2>
 
         <div className="about-main">
-          <img className="about-photo" src={profilePhoto} alt="Hideaki Umezawa portrait" />
+          <img
+            className={`about-photo${isPhotoVisible ? ' is-visible' : ''}`}
+            ref={photoRef}
+            src={profilePhoto}
+            alt="Hideaki Umezawa portrait"
+          />
 
           <div className="about-copy">
           <p>
