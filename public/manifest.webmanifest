@@ -1,0 +1,17 @@
+{
+  "name": "Umehide Portfolio",
+  "short_name": "UH",
+  "start_url": "/portfolio/",
+  "scope": "/portfolio/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#315cff",
+  "icons": [
+    {
+      "src": "UH.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
