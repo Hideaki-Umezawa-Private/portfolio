@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { mailToUrl } from '../data/profile'
 
 const navItems = [
   { id: 'top', label: 'Home' },
@@ -72,7 +73,7 @@ export function Header() {
         ))}
       </nav>
 
-      <a className="header-contact" href="#contact">お問い合わせ</a>
+      <a className="header-contact" href={mailToUrl}>お問い合わせ</a>
       <button
         aria-expanded={isMenuOpen}
         aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
