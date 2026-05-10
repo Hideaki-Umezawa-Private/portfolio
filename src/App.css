@@ -1306,6 +1306,14 @@ main::after {
   .contact-actions .button {
     width: 100%;
   }
+
+  main::after {
+    width: min(100% - 32px, 1120px);
+    margin-bottom: 0;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    content: "UH Umehide Portfolio\A© 2024 Umehide. All rights reserved.";
+    line-height: 1.6;
+  }
 }
 
 @media (max-width: 380px) {
