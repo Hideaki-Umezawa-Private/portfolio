@@ -7,18 +7,18 @@ export function Works() {
     <Section eyebrow="主な実績" id="works">
       <div className="work-card">
         <div className="project-copy">
-          <span className="project-label">大学研究向けWebアプリ</span>
+          <span className="project-label">西南学院大学外国語学部様向けWebアプリ</span>
           <h2>
-            英語音声研究向け
+            西南学院大学外国語学部様
             <br />
-            実験システム
+            英語音声研究システム
           </h2>
           <div className="project-achievement">
             <strong>約1,300名</strong>
             <span>の研究参加者が利用</span>
           </div>
           <p>
-            大学の研究室で使用されている、英語リスニング研究のための
+            西南学院大学外国語学部様の研究で使用されている、英語リスニング研究のための
             <br className="desktop-break" />
             Webアプリケーションを開発しました。
           </p>
