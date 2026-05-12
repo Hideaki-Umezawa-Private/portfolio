@@ -9,9 +9,9 @@ export function Works() {
         <div className="project-copy">
           <span className="project-label">西南学院大学外国語学部様向けWebアプリ</span>
           <h2>
-            西南学院大学外国語学部様
+            英語音声研究向け
             <br />
-            英語音声研究システム
+            実験システム
           </h2>
           <div className="project-achievement">
             <strong>約1,300名</strong>
