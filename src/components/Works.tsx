@@ -7,7 +7,7 @@ export function Works() {
     <Section eyebrow="主な実績" id="works">
       <div className="work-card">
         <div className="project-copy">
-          <span className="project-label">西南学院大学外国語学部様向けWebアプリ</span>
+          <span className="project-label">西南学院大学外国語学部様向けシステム</span>
           <h2>
             英語音声研究向け
             <br />
