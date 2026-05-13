@@ -75,8 +75,8 @@ export function Hero() {
         <article className="floating-card floating-card--top">
           <span>💬</span>
           <div>
-            <strong>相談しやすい対応</strong>
-            <p>初めての方でも安心してご相談いただけます</p>
+            <strong>初めてでも相談しやすい</strong>
+            <p>専門用語をできるだけ使わず、丁寧にヒアリングします</p>
           </div>
         </article>
         <article className="floating-card floating-card--middle">
