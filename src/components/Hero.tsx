@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { mailToUrl } from '../data/profile'
+import { Icon } from './Icon'
 
 export function Hero() {
   const visualRef = useRef<HTMLDivElement>(null)
@@ -73,21 +74,27 @@ export function Hero() {
         <div className="soft-orbit soft-orbit--two" />
         <div className="glow-ball" />
         <article className="floating-card floating-card--top">
-          <span>💬</span>
+          <span>
+            <Icon name="chat" />
+          </span>
           <div>
             <strong>初めてでも相談しやすい</strong>
             <p>専門用語をできるだけ使わず、丁寧にヒアリングします</p>
           </div>
         </article>
         <article className="floating-card floating-card--middle">
-          <span>💡</span>
+          <span>
+            <Icon name="idea" />
+          </span>
           <div>
             <strong>設計から運用まで一貫対応</strong>
             <p>ワンストップで対応するので安心してお任せいただけます</p>
           </div>
         </article>
         <article className="floating-card floating-card--bottom">
-          <span>♡</span>
+          <span>
+            <Icon name="support" />
+          </span>
           <div>
             <strong>業務改善までサポート</strong>
             <p>Webの力で課題を効率化し、改善サポートも行います</p>

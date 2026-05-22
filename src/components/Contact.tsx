@@ -1,9 +1,12 @@
 import { mailToUrl } from '../data/profile'
+import { Icon } from './Icon'
 
 export function Contact() {
   return (
     <section className="contact section-shell" id="contact">
-      <div className="contact-icon" aria-hidden="true">☏</div>
+      <div className="contact-icon" aria-hidden="true">
+        <Icon name="contact" />
+      </div>
       <div>
         <h2>まずはお気軽にご相談ください</h2>
         <p>
