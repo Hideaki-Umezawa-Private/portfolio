@@ -9,6 +9,7 @@ type IconName =
   | 'growth'
   | 'cloud'
   | 'contact'
+  | 'mail'
 
 type IconProps = {
   name: IconName
@@ -83,6 +84,12 @@ const paths: Record<IconName, ReactNode> = {
       <path d="M5.5 7.5l6.5 5 6.5-5" />
       <path d="M8 17l3-3" />
       <path d="M16 17l-3-3" />
+    </>
+  ),
+  mail: (
+    <>
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </>
   ),
 }

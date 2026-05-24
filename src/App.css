@@ -150,23 +150,15 @@ main {
   min-height: 48px;
   align-items: center;
   gap: 10px;
-  border: 1px solid rgb(255 255 255 / 0.16);
+  border: 1px solid rgb(255 255 255 / 0.18);
   border-radius: 8px;
   padding: 0 18px;
   color: var(--primary-foreground);
-  background: var(--foreground);
-  box-shadow: 0 10px 24px rgb(17 24 39 / 0.14);
+  background: var(--primary);
+  box-shadow: 0 14px 30px rgb(31 79 216 / 0.22);
   font-size: 0.88rem;
   font-weight: 800;
   text-decoration: none;
-}
-
-.header-contact::before {
-  width: 15px;
-  height: 11px;
-  border: 2px solid currentcolor;
-  border-radius: 3px;
-  content: "";
 }
 
 .menu-toggle {
@@ -331,18 +323,15 @@ h3 {
 }
 
 .button--primary {
-  border-color: var(--foreground);
+  border-color: var(--primary);
   color: var(--primary-foreground);
-  background: var(--foreground);
-  box-shadow: 0 14px 34px rgb(17 24 39 / 0.16);
+  background: var(--primary);
+  box-shadow: 0 18px 36px rgb(31 79 216 / 0.24);
 }
 
-.button--primary::before {
-  width: 15px;
-  height: 11px;
-  border: 2px solid currentcolor;
-  border-radius: 3px;
-  content: "";
+.button--primary:hover {
+  border-color: #1d4ed8;
+  box-shadow: 0 20px 42px rgb(31 79 216 / 0.28);
 }
 
 .hero__visual {
@@ -467,7 +456,9 @@ h3 {
 
 .floating-card svg,
 .service-card svg,
-.contact-icon svg {
+.contact-icon svg,
+.header-contact svg,
+.button svg {
   width: 1em;
   height: 1em;
   fill: none;

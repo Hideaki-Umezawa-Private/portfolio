@@ -17,6 +17,7 @@ export function Contact() {
       </div>
       <div className="contact-actions">
         <a className="button button--primary" href={mailToUrl}>
+          <Icon name="mail" />
           無料で相談してみる
         </a>
       </div>

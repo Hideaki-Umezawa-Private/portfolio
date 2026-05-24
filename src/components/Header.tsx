@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { mailToUrl } from '../data/profile'
+import { Icon } from './Icon'
 
 const navItems = [
   { id: 'top', label: 'Home' },
@@ -10,6 +11,7 @@ const navItems = [
 ]
 
 export function Header() {
+  const headerRef = useRef<HTMLElement>(null)
   const [activeSection, setActiveSection] = useState('top')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -17,27 +19,62 @@ export function Header() {
     const sections = navItems
       .map((item) => document.getElementById(item.id))
       .filter((section): section is HTMLElement => section !== null)
+    let frameId = 0
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const current = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+    const updateActiveSection = () => {
+      const marker = window.scrollY + 128
+      const isAtBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2
+      const current = isAtBottom
+        ? sections.at(-1)?.id
+        : sections.reduce((active, section) => {
+            return section.offsetTop <= marker ? section.id : active
+          }, 'top')
 
-        if (current?.target.id) {
-          setActiveSection(current.target.id)
-        }
-      },
-      {
-        rootMargin: '-28% 0px -58% 0px',
-        threshold: [0.12, 0.28, 0.48],
-      },
-    )
+      setActiveSection(current ?? 'top')
+    }
 
-    sections.forEach((section) => observer.observe(section))
+    const requestUpdate = () => {
+      cancelAnimationFrame(frameId)
+      frameId = requestAnimationFrame(updateActiveSection)
+    }
 
-    return () => observer.disconnect()
+    updateActiveSection()
+    window.addEventListener('scroll', requestUpdate, { passive: true })
+    window.addEventListener('resize', requestUpdate)
+
+    return () => {
+      cancelAnimationFrame(frameId)
+      window.removeEventListener('scroll', requestUpdate)
+      window.removeEventListener('resize', requestUpdate)
+    }
   }, [])
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return
+    }
+
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('pointerdown', closeOnOutsideClick)
+    document.addEventListener('keydown', closeOnEscape)
+
+    return () => {
+      document.removeEventListener('pointerdown', closeOnOutsideClick)
+      document.removeEventListener('keydown', closeOnEscape)
+    }
+  }, [isMenuOpen])
 
   const handleNavClick = (id: string) => {
     setActiveSection(id)
@@ -45,7 +82,7 @@ export function Header() {
   }
 
   return (
-    <header className="site-header" aria-label="サイトナビゲーション">
+    <header className="site-header" aria-label="サイトナビゲーション" ref={headerRef}>
       <a
         className="brand"
         href="#top"
@@ -73,7 +110,10 @@ export function Header() {
         ))}
       </nav>
 
-      <a className="header-contact" href={mailToUrl}>お問い合わせ</a>
+      <a className="header-contact" href={mailToUrl} onClick={() => setIsMenuOpen(false)}>
+        <Icon name="mail" />
+        お問い合わせ
+      </a>
       <button
         aria-expanded={isMenuOpen}
         aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}

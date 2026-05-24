@@ -60,6 +60,7 @@ export function Hero() {
         </p>
         <div className="hero__actions" aria-label="Primary links">
           <a className="button button--primary" href={mailToUrl}>
+            <Icon name="mail" />
             無料で相談してみる
           </a>
         </div>
