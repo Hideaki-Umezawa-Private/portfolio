@@ -16,7 +16,10 @@ Web・IT相談について問い合わせしたいです。
 【お名前】
 `
 
+const encodeMailBody = (body: string) =>
+  encodeURIComponent(body).replace(/%0A/g, '%0D%0A')
+
 // mailto の件名・本文はURL用に変換してから結合します。
 export const mailToUrl = `mailto:${emailAddress}?subject=${encodeURIComponent(
   mailSubject,
-)}&body=${encodeURIComponent(mailBody)}`
+)}&body=${encodeMailBody(mailBody)}`
