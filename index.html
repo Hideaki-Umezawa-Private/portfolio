@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="梅澤英昭(Umehide)のポートフォリオサイト。ホームページ制作からWebシステム開発、業務改善・運用サポートまで、ご相談から公開後まで一貫して対応します。"
+      content="砂漠の梅（梅澤英昭）のポートフォリオサイト。ホームページ制作からWebシステム開発、業務改善・運用サポートまで、ご相談から公開後まで一貫して対応します。"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Umehide Portfolio" />
+    <meta property="og:site_name" content="砂漠の梅" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="Umehide Portfolio｜想いを、カタチに。" />
+    <meta property="og:title" content="砂漠の梅｜ともに、その先へ。" />
     <meta
       property="og:description"
       content="ホームページ制作からWebシステム開発、業務改善・運用サポートまで一貫して対応するWebパートナーです。"
@@ -29,7 +29,24 @@
       content="https://hideaki-umezawa-private.github.io/portfolio/UH.png"
     />
     <meta name="twitter:card" content="summary" />
-    <title>Umehide Portfolio｜ホームページ制作・Webシステム開発</title>
+    <title>砂漠の梅｜ホームページ制作・Webシステム開発</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // GitHub Pages はSPAの深いパスへの直アクセス/リロードで404を返すため、
+      // 404.htmlからエンコードして戻されたパスをここで復元する。
+      (function () {
+        var redirect = sessionStorage.getItem('spa-redirect')
+        if (redirect) {
+          sessionStorage.removeItem('spa-redirect')
+          history.replaceState(null, '', redirect)
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

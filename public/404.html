@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // GitHub Pagesは静的ホスティングのため、SPAの深いパス(/portfolio/works 等)への
+      // 直アクセスやリロードで404を返す。ここでパスを保存し index.html に戻す。
+      sessionStorage.setItem('spa-redirect', location.pathname + location.search + location.hash)
+      location.replace('/portfolio/')
+    </script>
+  </head>
+  <body></body>
+</html>
