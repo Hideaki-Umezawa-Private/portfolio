@@ -1,34 +1,38 @@
-import { navItems } from '../data/navigation'
-import { githubUrl, qiitaUrl } from '../data/profile'
+import { Link } from 'react-router-dom'
+import { homeHref, navItems } from '../data/navigation'
 
-export function Footer() {
+type FooterProps = {
+  currentPage?: 'process' | 'faq' | 'privacy'
+}
+
+const extraLinks = [
+  { to: '/process', label: 'Process', page: 'process' as const },
+  { to: '/faq', label: 'FAQ', page: 'faq' as const },
+  { to: '/privacy', label: 'Privacy', page: 'privacy' as const },
+]
+
+export function Footer({ currentPage }: FooterProps) {
   return (
     <footer className="site-footer">
-      <a className="footer-brand" href="#top" aria-label="Umehide Portfolio top">
-        <strong>UH</strong>
-        Umehide Portfolio
-      </a>
+      <Link className="footer-brand" to="/">
+        <strong>砂漠の梅</strong>
+        <span className="brand-sub">Sabaku no Ume</span>
+      </Link>
 
       <nav className="footer-nav" aria-label="フッターナビゲーション">
         {navItems.map((item) => (
-          <a href={`#${item.id}`} key={item.id}>
+          <Link key={item.hash} to={homeHref(item.hash)}>
             {item.label}
-          </a>
+          </Link>
+        ))}
+        {extraLinks.map((link) => (
+          <Link key={link.page} to={link.to} className={currentPage === link.page ? 'is-current' : undefined}>
+            {link.label}
+          </Link>
         ))}
       </nav>
 
-      <div className="footer-social">
-        <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-        <a href={qiitaUrl} target="_blank" rel="noopener noreferrer">
-          Qiita
-        </a>
-      </div>
-
-      <small className="footer-copy">
-        © {new Date().getFullYear()} Umehide. All rights reserved.
-      </small>
+      <small className="footer-copy">© {new Date().getFullYear()} Sabaku no Ume. All rights reserved.</small>
     </footer>
   )
 }
