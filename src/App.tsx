@@ -1,26 +1,25 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { About } from './components/About'
-import { Contact } from './components/Contact'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { Services } from './components/Services'
-import { Works } from './components/Works'
+import { useScrollToHash } from './hooks/useScrollToHash'
+import { FaqPage } from './pages/FaqPage'
+import { Home } from './pages/Home'
+import { PrivacyPage } from './pages/PrivacyPage'
+import { ProcessPage } from './pages/ProcessPage'
+import { ServiceDetailPage } from './pages/ServiceDetailPage'
+import { WorksPage } from './pages/WorksPage'
 
 function App() {
+  useScrollToHash()
+
   return (
-    <>
-      {/* 大きなセクションごとに部品化して、App.tsxを読みやすく保ちます。 */}
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Works />
-        <Services />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/works" element={<WorksPage />} />
+      <Route path="/service" element={<ServiceDetailPage />} />
+      <Route path="/process" element={<ProcessPage />} />
+      <Route path="/faq" element={<FaqPage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
+    </Routes>
   )
 }
 
