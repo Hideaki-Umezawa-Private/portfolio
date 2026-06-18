@@ -1,15 +1,15 @@
 {
-  "name": "Umehide Portfolio",
-  "short_name": "UH",
+  "name": "砂漠の梅",
+  "short_name": "砂漠の梅",
   "start_url": "/portfolio/",
   "scope": "/portfolio/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#315cff",
+  "background_color": "#F5EFE3",
+  "theme_color": "#B0693B",
   "icons": [
     {
-      "src": "UH.png",
-      "sizes": "1254x1254",
+      "src": "camel.png",
+      "sizes": "400x400",
       "type": "image/png",
       "purpose": "any maskable"
     }
