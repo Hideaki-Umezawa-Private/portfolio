@@ -456,20 +456,25 @@ main {
   margin: 0 auto;
 }
 
-.section-heading {
+.section-heading,
+.approach-heading {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
+  gap: 12px 16px;
   margin-bottom: clamp(44px, 7vh, 72px);
 }
 
-.section-heading .rule {
+.section-heading .rule,
+.approach-heading .rule {
   flex: 1;
+  min-width: 24px;
   height: 1px;
   background: var(--line);
 }
 
-.section-heading .sub {
+.section-heading .sub,
+.approach-heading .sub {
   font-family: var(--font-mincho);
   font-size: 14px;
   color: var(--muted);
@@ -610,6 +615,7 @@ main {
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
+  justify-content: center;
 }
 
 .button-primary {
