@@ -1,14 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
+import { navItems } from '../data/navigation'
 import { mailToUrl } from '../data/profile'
 import { Icon } from './Icon'
-
-const navItems = [
-  { id: 'top', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'works', label: 'Works' },
-  { id: 'service', label: 'Service' },
-  { id: 'contact', label: 'Contact' },
-]
 
 export function Header() {
   const headerRef = useRef<HTMLElement>(null)
@@ -82,7 +75,7 @@ export function Header() {
   }
 
   return (
-    <header className="site-header" aria-label="サイトナビゲーション" ref={headerRef}>
+    <header className="site-header" ref={headerRef}>
       <a
         className="brand"
         href="#top"
@@ -97,7 +90,10 @@ export function Header() {
         </span>
       </a>
 
-      <nav className={`site-nav${isMenuOpen ? ' is-open' : ''}`}>
+      <nav
+        aria-label="メインナビゲーション"
+        className={`site-nav${isMenuOpen ? ' is-open' : ''}`}
+      >
         {navItems.map((item) => (
           <a
             aria-current={activeSection === item.id ? 'page' : undefined}
