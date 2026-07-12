@@ -1,6 +1,6 @@
 export const emailAddress = 'hideaki.umezawa.works@gmail.com'
-export const githubUrl = 'https://github.com/umehide-dev'
-export const xUrl = 'https://x.com/umehide_dev'
+export const githubUrl = 'https://github.com/Hideaki-Umezawa-Private'
+export const qiitaUrl = 'https://qiita.com/ume_hide'
 
 const mailSubject = 'Web・IT相談のお問い合わせ'
 const mailBody = `こんにちは。

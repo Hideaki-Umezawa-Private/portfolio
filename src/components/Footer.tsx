@@ -1,5 +1,5 @@
 import { navItems } from '../data/navigation'
-import { githubUrl, xUrl } from '../data/profile'
+import { githubUrl, qiitaUrl } from '../data/profile'
 
 export function Footer() {
   return (
@@ -21,8 +21,8 @@ export function Footer() {
         <a href={githubUrl} target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
-        <a href={xUrl} target="_blank" rel="noopener noreferrer">
-          X
+        <a href={qiitaUrl} target="_blank" rel="noopener noreferrer">
+          Qiita
         </a>
       </div>
 
