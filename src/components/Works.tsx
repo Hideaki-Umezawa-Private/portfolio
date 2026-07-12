@@ -25,7 +25,6 @@ export function Works() {
           <ul>
             <li>回答収集・反応時間計測・データ出力機能</li>
             <li>研究者が使いやすい管理画面</li>
-            <li>AWSを活用した安全でスケーラブルな構成</li>
           </ul>
         </div>
 
