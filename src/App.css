@@ -914,17 +914,6 @@ h3 {
   box-shadow: var(--shadow-md);
 }
 
-.project-label {
-  display: inline-flex;
-  margin-bottom: 16px;
-  border-radius: 999px;
-  padding: 7px 14px;
-  color: var(--primary);
-  background: rgb(31 79 216 / 0.08);
-  font-size: 0.78rem;
-  font-weight: 800;
-}
-
 .project-achievement {
   display: inline-flex;
   align-items: baseline;
@@ -1406,11 +1395,6 @@ h3 {
   .work-card {
     gap: 0;
     padding: 24px 20px;
-  }
-
-  .project-label {
-    max-width: 100%;
-    white-space: normal;
   }
 
   .project-achievement {
