@@ -16,13 +16,8 @@ export function Works() {
             <strong>約1,300名</strong>
             <span>の研究参加者が利用</span>
           </div>
-          <p>
-            西南学院大学外国語学部様の研究で使用されている、英語リスニング研究のための
-            <br className="desktop-break" />
-            Webアプリケーションを開発しました。
-          </p>
           <ul>
-            <li>回答収集・反応時間計測・データ出力機能</li>
+            <li>回答収集・反応時間計測・データ出力機能・音声解析</li>
             <li>研究者が使いやすい管理画面</li>
           </ul>
         </div>
