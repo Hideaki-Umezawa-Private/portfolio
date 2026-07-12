@@ -66,9 +66,15 @@ main {
 }
 
 .section-shell,
-.site-header {
+.site-header,
+.site-footer {
   width: min(100% - 40px, 1120px);
   margin: 0 auto;
+}
+
+/* 固定ヘッダーの高さぶんアンカー位置を下げ、見出しが隠れないようにします。 */
+.section-shell {
+  scroll-margin-top: 104px;
 }
 
 .site-header {
@@ -1055,19 +1061,66 @@ h3 {
   gap: 14px;
 }
 
-main::after {
-  display: block;
-  width: min(100% - 40px, 1120px);
-  margin: 0 auto 24px;
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  border-top: 1px solid var(--border);
+  padding: 22px 0 max(24px, env(safe-area-inset-bottom));
   color: var(--muted-foreground);
-  content: "UH   Umehide Portfolio        Home        About        Works        Service        Contact        © 2024 Umehide. All rights reserved.";
   font-size: 0.82rem;
-  white-space: pre-wrap;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--foreground);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-brand strong {
+  color: var(--primary);
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.footer-nav,
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.footer-nav a,
+.footer-social a {
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.footer-nav a:hover,
+.footer-social a:hover {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+.footer-copy {
+  margin-left: auto;
+  font-size: inherit;
 }
 
 @media (min-width: 760px) {
   .section-shell,
-  .site-header {
+  .site-header,
+  .site-footer {
     width: min(100% - 72px, 1120px);
   }
 
@@ -1186,8 +1239,22 @@ main::after {
 }
 
 @media (max-width: 759px) {
-  .section-shell {
+  .section-shell,
+  .site-footer {
     width: min(100% - 32px, 1120px);
+  }
+
+  .site-footer {
+    gap: 8px 16px;
+  }
+
+  .footer-nav {
+    display: none;
+  }
+
+  .footer-copy {
+    width: 100%;
+    margin-left: 0;
   }
 
   .desktop-break {
@@ -1409,18 +1476,12 @@ main::after {
     width: 100%;
   }
 
-  main::after {
-    width: min(100% - 32px, 1120px);
-    margin-bottom: 0;
-    padding-bottom: max(12px, env(safe-area-inset-bottom));
-    content: "UH Umehide Portfolio\A© 2026 Umehide. All rights reserved.";
-    line-height: 1.6;
-  }
 }
 
 @media (max-width: 380px) {
   .section-shell,
-  .site-header {
+  .site-header,
+  .site-footer {
     width: min(100% - 24px, 1120px);
   }
 

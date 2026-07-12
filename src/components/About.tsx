@@ -45,7 +45,7 @@ export function About() {
             className={`about-photo${isPhotoVisible ? ' is-visible' : ''}`}
             ref={photoRef}
             src={profilePhoto}
-            alt="Hideaki Umezawa portrait"
+            alt="梅澤英昭のポートレート写真"
           />
 
           <div className="about-copy">

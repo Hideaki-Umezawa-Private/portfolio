@@ -20,7 +20,12 @@ export function Services() {
             <h3>{title}</h3>
             <p>{body}</p>
             {link && (
-              <a className="service-link" href={link} target="_blank">
+              <a
+                className="service-link"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 関連リンクを見る
               </a>
             )}
