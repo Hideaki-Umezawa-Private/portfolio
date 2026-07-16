@@ -1,8 +1,8 @@
 {
   "name": "砂漠の梅",
   "short_name": "砂漠の梅",
-  "start_url": "/portfolio/",
-  "scope": "/portfolio/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#F5EFE3",
   "theme_color": "#B0693B",
