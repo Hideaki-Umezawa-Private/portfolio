@@ -3,11 +3,19 @@ import { ContactCta } from '../components/ContactCta'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { Reveal } from '../components/Reveal'
+import { usePageMeta } from '../hooks/usePageMeta'
 import iphoneImage from '../assets/iphone.png'
 import macbookImage from '../assets/macbook.png'
 import { workApproach } from '../data/works'
 
 export function WorksPage() {
+  usePageMeta({
+    title: '主な実績',
+    description:
+      '西南学院大学 外国語学部様向けの英語音声研究用実験システムなど、砂漠の梅が手がけたWeb開発の実績と大切にしている開発アプローチをご紹介します。',
+    path: '/works',
+  })
+
   return (
     <div className="page">
       <Header activeHash="works" />

@@ -3,9 +3,17 @@ import { ContactCta } from '../components/ContactCta'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { Reveal } from '../components/Reveal'
+import { usePageMeta } from '../hooks/usePageMeta'
 import { processSteps } from '../data/process'
 
 export function ProcessPage() {
+  usePageMeta({
+    title: '制作の流れ',
+    description:
+      'ヒアリングから設計・仕様策定、実装、品質・セキュリティ確認、公開・運用体制の構築まで、砂漠の梅の制作プロセスをご紹介します。',
+    path: '/process',
+  })
+
   return (
     <div className="page">
       <Header />

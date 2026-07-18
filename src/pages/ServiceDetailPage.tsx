@@ -3,9 +3,17 @@ import { ContactCta } from '../components/ContactCta'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { Reveal } from '../components/Reveal'
+import { usePageMeta } from '../hooks/usePageMeta'
 import { services } from '../data/services'
 
 export function ServiceDetailPage() {
+  usePageMeta({
+    title: 'できること',
+    description:
+      'ホームページ制作からWebシステム開発、ECサイト構築、AI導入・業務自動化、業務改善サポートまで、砂漠の梅が提供するサービス内容をご紹介します。',
+    path: '/service',
+  })
+
   return (
     <div className="page">
       <Header activeHash="service" />

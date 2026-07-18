@@ -9,10 +9,18 @@ import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { IntroSplash } from '../components/IntroSplash'
 import { Reveal } from '../components/Reveal'
+import { usePageMeta } from '../hooks/usePageMeta'
 import { githubUrl, mailToUrl, qiitaUrl } from '../data/profile'
 import { services } from '../data/services'
 
 export function Home() {
+  usePageMeta({
+    title: '砂漠の梅｜ホームページ制作・Webシステム開発',
+    description:
+      '砂漠の梅（梅澤英昭）のポートフォリオサイト。ホームページ制作からWebシステム開発、業務改善・運用サポートまで、ご相談から公開後まで一貫して対応します。',
+    path: '/',
+  })
+
   return (
     <div className="page">
       <IntroSplash />
