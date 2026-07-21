@@ -547,7 +547,14 @@ main {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(70% 55% at 50% 42%, rgba(255, 250, 238, 0.5), rgba(255, 250, 238, 0.18) 60%, transparent 78%);
+  /* scroll案内や「ブランドの物語を読む」リンクまで文字が読める濃さ・範囲に広げている */
+  background: radial-gradient(
+    75% 78% at 50% 48%,
+    rgba(255, 250, 238, 0.85),
+    rgba(255, 250, 238, 0.25) 55%,
+    rgba(255, 250, 238, 0.08) 78%,
+    transparent 95%
+  );
 }
 
 .hero__inner {
@@ -1060,11 +1067,11 @@ main {
   position: relative;
   font-family: var(--font-mincho);
   font-weight: 600;
-  font-size: clamp(30px, 5.4vw, 64px);
+  /* 「ラクダに似ているね。」を折り返さず横一列に収めるため、画面幅に強く連動させる */
+  font-size: clamp(16px, 6.8vw, 64px);
   line-height: 1.5;
   letter-spacing: 0.03em;
-  text-wrap: balance;
-  max-width: 16em;
+  white-space: nowrap;
 }
 
 .story-quote .quote-mark {
@@ -1086,6 +1093,17 @@ main {
 .story-quote .text {
   position: relative;
   z-index: 1;
+}
+
+/* スマホ幅でのみ改行させたい箇所に使う汎用ユーティリティ */
+.mobile-break {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mobile-break {
+    display: inline;
+  }
 }
 
 .story-grid {

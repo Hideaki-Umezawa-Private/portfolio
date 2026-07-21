@@ -54,7 +54,9 @@ export function Home() {
 
             <Reveal>
               <p className="lead">
-                あなたに寄り添い、ともに前へ進める<span className="accent">パートナー</span>です。
+                あなたに寄り添い、ともに前へ進める
+                <br className="mobile-break" />
+                <span className="accent">パートナー</span>です。
               </p>
             </Reveal>
 

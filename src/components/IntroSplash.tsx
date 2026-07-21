@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import camelLogo from '../assets/camel.png'
 
 const DUST = [
@@ -13,18 +14,23 @@ const DUST = [
   { left: '46%', size: '2px', dur: '5.4s', delay: '1.6s' },
 ]
 
-// モジュール読み込み時に一度だけ判定する(StrictModeのレンダー二重実行の影響を受けないように)。
-const shouldShowIntro = (() => {
-  if (typeof sessionStorage === 'undefined' || sessionStorage.getItem('sabakuIntroShown')) {
-    return false
-  }
-  sessionStorage.setItem('sabakuIntroShown', '1')
-  return true
-})()
+// モジュールスコープの変数はページを実際に読み込んだ(初回アクセス/リロード)
+// ときにリセットされ、以後クライアントサイド遷移でHomeに何度戻ってもリセットさ
+// れない。sessionStorageだとリロードしても消えず「トップページのリロードでも
+// 再生したい」という要件に合わないため使わない。
+let hasShownIntro = false
 
-// 初回訪問時のみ表示するブランドの導入演出(セッション単位で1回)。
+// 初回訪問時、またはトップページの再読み込み時のみ表示するブランドの導入演出。
 export function IntroSplash() {
-  if (!shouldShowIntro) {
+  // 読み取りは副作用なしにして、StrictModeの二重呼び出しでも結果が安定するように
+  // し、実際にフラグを立てる処理はマウント後のeffectに分離する。
+  const [show] = useState(() => !hasShownIntro)
+
+  useEffect(() => {
+    hasShownIntro = true
+  }, [])
+
+  if (!show) {
     return null
   }
 
