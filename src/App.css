@@ -694,7 +694,7 @@ main {
   letter-spacing: 0.3em;
   font-size: 11px;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink);
 }
 
 .scroll-hint .track {
