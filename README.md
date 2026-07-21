@@ -22,7 +22,7 @@
 | | |
 |---|---|
 | 本番 | **[sabaume.com](https://sabaume.com)**(Cloudflare Pages) |
-| 旧URL | [hideaki-umezawa-private.github.io/portfolio](https://hideaki-umezawa-private.github.io/portfolio/)(sabaume.comへ自動転送) |
+| 旧URL | [hideaki-umezawa-private.github.io/portfolio](https://hideaki-umezawa-private.github.io/portfolio/) |
 
 ---
 
