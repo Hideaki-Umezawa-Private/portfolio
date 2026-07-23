@@ -3,11 +3,35 @@ import { ContactCta } from '../components/ContactCta'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { Reveal } from '../components/Reveal'
+import { usePageMeta } from '../hooks/usePageMeta'
 import { faqs } from '../data/faq'
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+}
+
 export function FaqPage() {
+  usePageMeta({
+    title: 'よくある質問',
+    description:
+      '料金や開発体制、セキュリティ対応、公開後のサポートなど、砂漠の梅へのご相談前によくいただく質問にお答えします。',
+    path: '/faq',
+  })
+
   return (
     <div className="page">
+      {/* faqデータからFAQPage構造化データを生成し、検索結果でのQ&Aリッチリザルト表示を狙う */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
       <Header />
 
       <main>
