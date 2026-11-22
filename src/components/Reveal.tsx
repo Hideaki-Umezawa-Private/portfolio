@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 
 type RevealProps = {
+  id?: string
   className?: string
   delay?: number
   children: ReactNode
 }
 
 // スクロールで要素が視界に入ったタイミングでフェードインさせるラッパー。
-export function Reveal({ className = '', delay = 0, children }: RevealProps) {
+export function Reveal({ id, className = '', delay = 0, children }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -36,6 +37,7 @@ export function Reveal({ className = '', delay = 0, children }: RevealProps) {
 
   return (
     <div
+      id={id}
       ref={ref}
       className={`reveal${visible ? ' is-visible' : ''}${className ? ` ${className}` : ''}`}
       style={{ '--reveal-delay': `${delay}s` } as CSSProperties}

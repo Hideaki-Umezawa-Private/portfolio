@@ -1,6 +1,8 @@
 export const emailAddress = 'hideaki.umezawa.works@gmail.com'
 export const githubUrl = 'https://github.com/Hideaki-Umezawa-Private'
 export const qiitaUrl = 'https://qiita.com/ume_hide'
+// 無料相談フォーム(Googleフォーム)
+export const consultFormUrl = 'https://forms.gle/yLHtVPRGJASErJebA'
 
 const mailSubject = 'Web・IT相談のお問い合わせ'
 const mailBody = `こんにちは。

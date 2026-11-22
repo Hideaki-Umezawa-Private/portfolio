@@ -2,18 +2,16 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
     <script>
-      // GitHub Pages / Cloudflare Pages のどちらも、静的ホスティングのため
-      // SPAの深いパス(例: /works)への直アクセスやリロードで404を返し、この
-      // ファイルが代わりに配信される。
+      // 存在しないURLへのアクセス時に配信される。
       if (location.hostname === 'hideaki-umezawa-private.github.io') {
         // GitHub Pagesはもう正式な公開先ではないため、sabaume.comへ転送する。
         var path = location.pathname.replace(/^\/portfolio/, '') || '/'
         location.replace('https://sabaume.com' + path + location.search + location.hash)
       } else {
-        // Cloudflare Pages等: パスを保存してルートのindex.htmlに戻し、
-        // React Router側でクライアントサイドルーティングを復元する。
-        sessionStorage.setItem('spa-redirect', location.pathname + location.search + location.hash)
+        // Cloudflare Pages等: 各ページはビルド時にHTMLとして書き出しているため、
+        // ここに来るのは存在しないURLのみ。トップページへ案内する。
         location.replace('/')
       }
     </script>

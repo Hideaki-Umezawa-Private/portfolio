@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom'
 import { homeHref, navItems } from '../data/navigation'
 
 type FooterProps = {
-  currentPage?: 'process' | 'faq' | 'privacy'
+  currentPage?: 'shopPlan' | 'process' | 'faq' | 'privacy'
 }
 
 const extraLinks = [
+  { to: '/shop-plan', label: 'Shop Plan', page: 'shopPlan' as const },
   { to: '/process', label: 'Process', page: 'process' as const },
   { to: '/faq', label: 'FAQ', page: 'faq' as const },
   { to: '/privacy', label: 'Privacy', page: 'privacy' as const },
@@ -32,7 +33,7 @@ export function Footer({ currentPage }: FooterProps) {
         ))}
       </nav>
 
-      <small className="footer-copy">© {new Date().getFullYear()} Sabaku no Ume. All rights reserved.</small>
+      <small className="footer-copy" suppressHydrationWarning>© {new Date().getFullYear()} Sabaku no Ume. All rights reserved.</small>
     </footer>
   )
 }

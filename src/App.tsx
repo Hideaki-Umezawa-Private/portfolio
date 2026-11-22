@@ -6,6 +6,7 @@ import { Home } from './pages/Home'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { ProcessPage } from './pages/ProcessPage'
 import { ServiceDetailPage } from './pages/ServiceDetailPage'
+import { ShopPlanPage } from './pages/ShopPlanPage'
 import { WorksPage } from './pages/WorksPage'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/works" element={<WorksPage />} />
       <Route path="/service" element={<ServiceDetailPage />} />
+      <Route path="/shop-plan" element={<ShopPlanPage />} />
       <Route path="/process" element={<ProcessPage />} />
       <Route path="/faq" element={<FaqPage />} />
       <Route path="/privacy" element={<PrivacyPage />} />

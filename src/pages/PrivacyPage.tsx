@@ -1,4 +1,5 @@
 import { BackToTop } from '../components/BackToTop'
+import { Breadcrumb } from '../components/Breadcrumb'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { usePageMeta } from '../hooks/usePageMeta'
@@ -6,19 +7,16 @@ import { legalRows } from '../data/legal'
 import { emailAddress } from '../data/profile'
 
 export function PrivacyPage() {
-  usePageMeta({
-    title: 'プライバシーポリシー・特定商取引法に基づく表記',
-    description: '砂漠の梅における個人情報の取り扱いについてのプライバシーポリシー、および特定商取引法に基づく表記を掲載しています。',
-    path: '/privacy',
-  })
+  usePageMeta('privacy')
 
   return (
     <div className="page">
       <Header />
 
-      <main>
+      <main id="main">
         <section className="page-hero">
           <div className="page-hero__inner">
+            <Breadcrumb current="プライバシーポリシー" />
             <span className="eyebrow">Legal</span>
             <h1>プライバシーポリシー / 特定商取引法に基づく表記</h1>
           </div>

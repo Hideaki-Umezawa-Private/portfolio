@@ -1,14 +1,5 @@
 import { useEffect } from 'react'
-
-const SITE_URL = 'https://sabaume.com'
-const SITE_NAME = '砂漠の梅'
-const DEFAULT_OG_IMAGE = `${SITE_URL}/camel.png`
-
-type PageMetaOptions = {
-  title: string
-  description: string
-  path: string
-}
+import { DEFAULT_OG_IMAGE, fullTitle, pages, pageUrl, type PageKey } from '../data/seo'
 
 function setMetaTag(attr: 'name' | 'property', key: string, content: string) {
   let el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`)
@@ -30,24 +21,25 @@ function setLinkTag(rel: string, href: string) {
   el.setAttribute('href', href)
 }
 
-// ページ遷移ごとにタイトル・description・canonical・OG/Twitterタグを更新する。
-// SPAのためindex.htmlの静的metaだけでは全ページ同じ内容になってしまうのを防ぐ。
-export function usePageMeta({ title, description, path }: PageMetaOptions) {
+// クライアント側でページ遷移したときに title・description・canonical・OG/Twitter を更新する。
+// 直接アクセス時の内容は scripts/prerender.mjs がビルド時に各ページのHTMLへ書き込んでいる。
+export function usePageMeta(key: PageKey) {
   useEffect(() => {
-    const url = `${SITE_URL}${path}`
-    const fullTitle = path === '/' ? title : `${title}｜${SITE_NAME}`
+    const meta = pages[key]
+    const url = pageUrl(meta)
+    const title = fullTitle(meta)
 
-    document.title = fullTitle
-    setMetaTag('name', 'description', description)
+    document.title = title
+    setMetaTag('name', 'description', meta.description)
     setLinkTag('canonical', url)
 
-    setMetaTag('property', 'og:title', fullTitle)
-    setMetaTag('property', 'og:description', description)
+    setMetaTag('property', 'og:title', title)
+    setMetaTag('property', 'og:description', meta.description)
     setMetaTag('property', 'og:url', url)
     setMetaTag('property', 'og:image', DEFAULT_OG_IMAGE)
 
-    setMetaTag('name', 'twitter:title', fullTitle)
-    setMetaTag('name', 'twitter:description', description)
+    setMetaTag('name', 'twitter:title', title)
+    setMetaTag('name', 'twitter:description', meta.description)
     setMetaTag('name', 'twitter:image', DEFAULT_OG_IMAGE)
-  }, [title, description, path])
+  }, [key])
 }

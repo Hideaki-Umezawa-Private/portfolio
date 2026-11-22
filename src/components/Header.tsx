@@ -81,6 +81,9 @@ export function Header({ activeHash, scrollSpy = false, transparentAtTop = false
 
   return (
     <header className={headerClassName} ref={headerRef}>
+      <a className="skip-link" href="#main">
+        本文へスキップ
+      </a>
       <Link className="brand" to="/" aria-label="砂漠の梅 トップページ" onClick={() => setIsMenuOpen(false)}>
         <img src={camelLogo} alt="砂漠の梅 ロゴ" />
         <span className="brand-text">

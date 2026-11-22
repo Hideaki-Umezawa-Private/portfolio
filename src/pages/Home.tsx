@@ -14,12 +14,7 @@ import { githubUrl, mailToUrl, qiitaUrl } from '../data/profile'
 import { services } from '../data/services'
 
 export function Home() {
-  usePageMeta({
-    title: '砂漠の梅｜ホームページ制作・Webシステム開発',
-    description:
-      '砂漠の梅（梅澤英昭）のポートフォリオサイト。ホームページ制作からWebシステム開発、業務改善・運用サポートまで、ご相談から公開後まで一貫して対応します。',
-    path: '/',
-  })
+  usePageMeta('home')
 
   return (
     <div className="page">
@@ -29,7 +24,7 @@ export function Home() {
 
       <Header scrollSpy transparentAtTop />
 
-      <main>
+      <main id="main">
         <section id="top" className="hero">
           <div className="hero__glow" aria-hidden="true" />
           <div className="hero__inner">
@@ -89,7 +84,7 @@ export function Home() {
         <section id="service" className="section section--paper">
           <div className="section-inner">
             <Reveal className="section-heading">
-              <span className="eyebrow">01 — Service</span>
+              <span className="eyebrow">Service</span>
               <span className="rule" aria-hidden="true" />
             </Reveal>
             <div className="section-title-row">
@@ -101,11 +96,13 @@ export function Home() {
 
             <div className="service-row-list">
               {services.map((service) => (
-                <Reveal key={service.no} className="service-row">
-                  <span className="label">
-                    <span className="no">{service.no}</span>
+                <Reveal key={service.id}>
+                  <Link className="service-row" to={`/service#${service.id}`}>
                     <span className="title">{service.title}</span>
-                  </span>
+                    <span className="arrow" aria-hidden="true">
+                      →
+                    </span>
+                  </Link>
                 </Reveal>
               ))}
             </div>
@@ -115,34 +112,33 @@ export function Home() {
         <section id="works" className="section section--sand2">
           <div className="section-inner">
             <Reveal className="section-heading">
-              <span className="eyebrow">02 — Works</span>
+              <span className="eyebrow">Works</span>
               <span className="rule" aria-hidden="true" />
             </Reveal>
             <div className="section-title-row">
               <h2>主な実績</h2>
-              <Link className="detail-link" to="/works">
-                詳細を見る →
-              </Link>
             </div>
 
             <div className="work-grid">
               <Reveal className="work-copy">
                 <span className="work-tag">西南学院大学 外国語学部様</span>
-                <h2>
+                <h3>
                   英語音声研究向け
                   <br />
                   実験システム
-                </h2>
+                </h3>
                 <div className="work-stat">
                   <strong>
                     約1,300<small>名</small>
                   </strong>
                   <span>の研究参加者が利用</span>
                 </div>
-                <ul className="work-list">
-                  <li>回答収集・反応時間計測・データ出力・音声解析</li>
-                  <li>研究者が使いやすい管理画面</li>
-                </ul>
+                <p className="work-summary">
+                  回答収集から反応時間の計測、音声解析までを一つにまとめた研究用のWebシステムです。
+                </p>
+                <Link className="work-more" to="/works">
+                  課題・取り組み・成果を読む<span className="arrow" aria-hidden="true">→</span>
+                </Link>
               </Reveal>
 
               <Reveal className="work-media" delay={0.12}>
@@ -157,7 +153,7 @@ export function Home() {
         <section id="story" className="section section--paper section--top-line">
           <div className="section-inner">
             <Reveal className="section-heading">
-              <span className="eyebrow">03 — Story</span>
+              <span className="eyebrow">Story</span>
               <span className="rule" aria-hidden="true" />
               <span className="sub">はじまりの、ひとこと。</span>
             </Reveal>
@@ -198,7 +194,7 @@ export function Home() {
         <section id="about" className="section section--paper">
           <div className="section-inner">
             <Reveal className="section-heading">
-              <span className="eyebrow">04 — About</span>
+              <span className="eyebrow">About</span>
               <span className="rule" aria-hidden="true" />
             </Reveal>
 

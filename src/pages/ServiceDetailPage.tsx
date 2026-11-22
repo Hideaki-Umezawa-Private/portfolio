@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import { BackToTop } from '../components/BackToTop'
+import { Breadcrumb } from '../components/Breadcrumb'
 import { ContactCta } from '../components/ContactCta'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
@@ -7,20 +9,16 @@ import { usePageMeta } from '../hooks/usePageMeta'
 import { services } from '../data/services'
 
 export function ServiceDetailPage() {
-  usePageMeta({
-    title: 'できること',
-    description:
-      'ホームページ制作からWebシステム開発、ECサイト構築、AI導入・業務自動化、業務改善サポートまで、砂漠の梅が提供するサービス内容をご紹介します。',
-    path: '/service',
-  })
+  usePageMeta('service')
 
   return (
     <div className="page">
       <Header activeHash="service" />
 
-      <main>
+      <main id="main">
         <section className="page-hero">
           <div className="page-hero__inner">
+            <Breadcrumb current="できること" />
             <span className="eyebrow">Service</span>
             <h1>できること</h1>
             <p>Webの力で課題を整理し、最適な形へ。ご相談から公開後の運用まで、必要な工程をまとめてお任せいただけます。</p>
@@ -30,14 +28,8 @@ export function ServiceDetailPage() {
         <section className="section section--paper" style={{ paddingTop: 0 }}>
           <div className="service-card-list">
             {services.map((service) => (
-              <Reveal key={service.no} className="service-card">
-                <span className="bg-no" aria-hidden="true">
-                  {service.no}
-                </span>
-                <div>
-                  <span className="no">{service.no}</span>
-                  <h2>{service.title}</h2>
-                </div>
+              <Reveal key={service.id} id={service.id} className="service-card">
+                <h2>{service.title}</h2>
                 <div>
                   <p className="body">{service.body}</p>
                   <ul>
@@ -45,6 +37,17 @@ export function ServiceDetailPage() {
                       <li key={point}>{point}</li>
                     ))}
                   </ul>
+                  {service.id === 'website' && (
+                    <Link className="plan-callout" to="/shop-plan">
+                      <span className="plan-callout__label">お店向け</span>
+                      <span className="plan-callout__text">
+                        お店専用のホームページが<strong>月々4,980円</strong>で持てるプランもあります
+                      </span>
+                      <span className="arrow" aria-hidden="true">
+                        →
+                      </span>
+                    </Link>
+                  )}
                   {service.link && (
                     <a className="service-link" href={service.link} target="_blank" rel="noopener noreferrer">
                       関連リンクを見る ↗
