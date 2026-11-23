@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <title>砂漠の梅</title>
+    <link rel="canonical" href="https://sabaume.com/" />
+    <script>
+      // 旧URL(名刺のQRコードなど)から sabaume.com へ転送する。
+      // /portfolio/ 以下のパス・検索・hashはそのまま引き継ぐ。
+      var path = location.pathname.replace(/^\/portfolio/, '') || '/'
+      location.replace('https://sabaume.com' + path + location.search + location.hash)
+    </script>
+    <meta http-equiv="refresh" content="0; url=https://sabaume.com/" />
+  </head>
+  <body>
+    <p><a href="https://sabaume.com/">sabaume.com</a> へ移転しました。</p>
+  </body>
+</html>
