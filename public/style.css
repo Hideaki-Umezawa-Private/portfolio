@@ -2046,6 +2046,11 @@ main {
   animation: introTagIn 0.8s ease 2s forwards;
 }
 
+/* 同じタブで2回目以降にトップページを開いたときは再生しない(index.html の head 内スクリプトが付与) */
+.no-intro .intro-splash {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .intro-splash {
     display: none !important;
